@@ -22,6 +22,12 @@ const machinesLinks = [
   { label: "Tout le catalogue", href: "/machines" },
 ];
 
+const entrepriseLinks = [
+  { label: "L\u2019entreprise", href: "/entreprise" },
+  { label: "Bureau d\u2019\u00e9tudes", href: "/bureau-etudes" },
+  { label: "Contact", href: "/contact" },
+];
+
 interface NavDropdownProps {
   label: string;
   links: { label: string; href: string }[];
@@ -163,28 +169,15 @@ export default function Header() {
             links={machinesLinks}
             closeMobile={closeMobile}
           />
-          <Link
-            href="/bureau-etudes"
-            className="text-[#0f2744] font-medium hover:text-[#e8772e] transition-colors"
-          >
-            Bureau d&apos;etudes
-          </Link>
-          <Link
-            href="/entreprise"
-            className="text-[#0f2744] font-medium hover:text-[#e8772e] transition-colors"
-          >
-            Entreprise
-          </Link>
-          <Link
-            href="/contact"
-            className="text-[#0f2744] font-medium hover:text-[#e8772e] transition-colors"
-          >
-            Contact
-          </Link>
+          <NavDropdown
+            label="L&apos;entreprise"
+            links={entrepriseLinks}
+            closeMobile={closeMobile}
+          />
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-3">
           <a
             href="tel:0767104277"
             className="flex items-center gap-2 text-sm font-medium text-[#0f2744] hover:text-[#e8772e] transition-colors"
@@ -192,6 +185,12 @@ export default function Header() {
             <Phone className="h-4 w-4" />
             07 67 10 42 77
           </a>
+          <Link
+            href="/plateforme"
+            className="inline-flex items-center justify-center rounded-lg bg-[#2D5016] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#3a6b1e]"
+          >
+            Plateforme
+          </Link>
           <Link
             href="/contact"
             className="inline-flex items-center justify-center rounded-lg bg-[#e8772e] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#d4691f]"
@@ -232,27 +231,11 @@ export default function Header() {
               links={machinesLinks}
               closeMobile={closeMobile}
             />
-            <Link
-              href="/bureau-etudes"
-              className="block py-3 text-[#0f2744] font-medium hover:text-[#e8772e] transition-colors"
-              onClick={closeMobile}
-            >
-              Bureau d&apos;etudes
-            </Link>
-            <Link
-              href="/entreprise"
-              className="block py-3 text-[#0f2744] font-medium hover:text-[#e8772e] transition-colors"
-              onClick={closeMobile}
-            >
-              Entreprise
-            </Link>
-            <Link
-              href="/contact"
-              className="block py-3 text-[#0f2744] font-medium hover:text-[#e8772e] transition-colors"
-              onClick={closeMobile}
-            >
-              Contact
-            </Link>
+            <NavDropdown
+              label="L'entreprise"
+              links={entrepriseLinks}
+              closeMobile={closeMobile}
+            />
 
             <div className="mt-6 space-y-4 border-t border-gray-100 pt-6">
               <a
@@ -262,6 +245,13 @@ export default function Header() {
                 <Phone className="h-4 w-4" />
                 07 67 10 42 77
               </a>
+              <Link
+                href="/plateforme"
+                className="block w-full rounded-lg bg-[#2D5016] px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-[#3a6b1e]"
+                onClick={closeMobile}
+              >
+                Plateforme
+              </Link>
               <Link
                 href="/contact"
                 className="block w-full rounded-lg bg-[#e8772e] px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-[#d4691f]"
